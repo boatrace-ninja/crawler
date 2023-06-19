@@ -61,24 +61,28 @@ class NoticeCrawler extends BaseCrawler
         }
 
         $windFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[3]/div/span[2]';
+        $windDirectionFormat = '%s/div[2]/div[5]/div[2]/div[2]/div[1]/div[4]/p';
         $waveFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[6]/div/span[2]';
         $weatherIdFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[2]/div/span';
         $temperatureFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[1]/div/span[2]';
         $waterTemperatureFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[5]/div/span[2]';
 
         $windXPath = sprintf($windFormat, $this->baseXPath, $this->baseLevel + 5);
+        $windDirectionXPath = sprintf($windDirectionFormat, $this->baseXPath, $this->baseLevel + 5);
         $waveXPath = sprintf($waveFormat, $this->baseXPath, $this->baseLevel + 5);
         $weatherNameXPath = sprintf($weatherIdFormat, $this->baseXPath, $this->baseLevel + 5);
         $temperatureXPath = sprintf($temperatureFormat, $this->baseXPath, $this->baseLevel + 5);
         $waterTemperatureXPath = sprintf($waterTemperatureFormat, $this->baseXPath, $this->baseLevel + 5);
 
         $wind = $this->filterXPath($crawler, $windXPath);
+        $windDirection = $this->filterXPathForWindDirection($crawler, $windDirectionXPath);
         $wave = $this->filterXPath($crawler, $waveXPath);
         $weatherName = $this->filterXPath($crawler, $weatherNameXPath);
         $temperature = $this->filterXPath($crawler, $temperatureXPath);
         $waterTemperature = $this->filterXPath($crawler, $waterTemperatureXPath);
 
         $wind = is_null($wind) ? null : Converter::convertToWind($wind);
+        $windDirection = is_null($windDirection) ? null : Converter::convertToWindDirection($windDirection);
         $wave = is_null($wave) ? null : Converter::convertToWave($wave);
         $weatherId = is_null($weatherName) ? null : Converter::convertToWeatherId($weatherName);
         $temperature = is_null($temperature) ? null : Converter::convertToTemperature($temperature);
@@ -88,6 +92,7 @@ class NoticeCrawler extends BaseCrawler
         $response['stadiums'][$stadiumId]['races'][$raceNumber]['stadium_id'] = $stadiumId;
         $response['stadiums'][$stadiumId]['races'][$raceNumber]['race_number'] = $raceNumber;
         $response['stadiums'][$stadiumId]['races'][$raceNumber]['wind'] = $wind;
+        $response['stadiums'][$stadiumId]['races'][$raceNumber]['wind_direction'] = $windDirection;
         $response['stadiums'][$stadiumId]['races'][$raceNumber]['wave'] = $wave;
         $response['stadiums'][$stadiumId]['races'][$raceNumber]['weather_id'] = $weatherId;
         $response['stadiums'][$stadiumId]['races'][$raceNumber]['temperature'] = $temperature;

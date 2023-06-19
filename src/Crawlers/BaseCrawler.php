@@ -44,6 +44,16 @@ abstract class BaseCrawler
     /**
      * @param  \Symfony\Component\DomCrawler\Crawler  $crawler
      * @param  string                                 $xpath
+     * @return string|null
+     */
+    protected function filterXPathForWindDirection(Crawler $crawler, string $xpath): ?string
+    {
+        return count($crawler->filterXPath($xpath)) ? Converter::convertToString($crawler->filterXPath($xpath)->attr('class')) : null;
+    }
+
+    /**
+     * @param  \Symfony\Component\DomCrawler\Crawler  $crawler
+     * @param  string                                 $xpath
      * @return float|null
      */
     protected function filterXPathForOdds(Crawler $crawler, string $xpath): ?float

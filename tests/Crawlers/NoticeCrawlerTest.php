@@ -39,6 +39,7 @@ class NoticeCrawlerTest extends PHPUnitTestCase
         $this->assertSame(24, $response['stadiums'][24]['races'][1]['stadium_id']);
         $this->assertSame(1, $response['stadiums'][24]['races'][1]['race_number']);
         $this->assertSame(7, $response['stadiums'][24]['races'][1]['wind']);
+        $this->assertSame(11, $response['stadiums'][24]['races'][1]['wind_direction']);
         $this->assertSame(6, $response['stadiums'][24]['races'][1]['wave']);
         $this->assertSame(2, $response['stadiums'][24]['races'][1]['weather_id']);
         $this->assertSame(13.0, $response['stadiums'][24]['races'][1]['temperature']);
@@ -103,6 +104,7 @@ class NoticeCrawlerTest extends PHPUnitTestCase
         $this->assertSame(2, $response['stadiums'][2]['races'][1]['stadium_id']);
         $this->assertSame(1, $response['stadiums'][2]['races'][1]['race_number']);
         $this->assertNull($response['stadiums'][2]['races'][1]['wind']);
+        $this->assertNull($response['stadiums'][2]['races'][1]['wind_direction']);
         $this->assertNull($response['stadiums'][2]['races'][1]['wave']);
         $this->assertNull($response['stadiums'][2]['races'][1]['weather_id']);
         $this->assertNull($response['stadiums'][2]['races'][1]['temperature']);
