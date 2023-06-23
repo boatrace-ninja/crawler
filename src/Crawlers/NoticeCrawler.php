@@ -61,7 +61,7 @@ class NoticeCrawler extends BaseCrawler
         }
 
         $windFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[3]/div/span[2]';
-        $windDirectionFormat = '%s/div[2]/div[5]/div[2]/div[2]/div[1]/div[4]/p';
+        $windDirectionFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[4]/p';
         $waveFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[6]/div/span[2]';
         $weatherIdFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[2]/div/span';
         $temperatureFormat = '%s/div[2]/div[%s]/div[2]/div[2]/div[1]/div[1]/div/span[2]';
