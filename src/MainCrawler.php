@@ -75,8 +75,8 @@ class MainCrawler
 
     /**
      * @param  \Boatrace\Ninja\Crawlers\BaseCrawler  $crawler
-     * @param  string                           $date
-     * @param  int                              $seconds
+     * @param  string                                $date
+     * @param  int                                   $seconds
      * @return array
      */
     protected function crawlWithoutStadiumIdRaceNumber(BaseCrawler $crawler, string $date, int $seconds): array
@@ -94,9 +94,9 @@ class MainCrawler
 
     /**
      * @param  \Boatrace\Ninja\Crawlers\BaseCrawler  $crawler
-     * @param  string                           $date
-     * @param  int                              $raceNumber
-     * @param  int                              $seconds
+     * @param  string                                $date
+     * @param  int                                   $raceNumber
+     * @param  int                                   $seconds
      * @return array
      */
     protected function crawlWithoutStadiumId(BaseCrawler $crawler, string $date, int $raceNumber, int $seconds): array
@@ -112,9 +112,9 @@ class MainCrawler
 
     /**
      * @param  \Boatrace\Ninja\Crawlers\BaseCrawler  $crawler
-     * @param  string                           $date
-     * @param  int                              $stadiumId
-     * @param  int                              $seconds
+     * @param  string                                $date
+     * @param  int                                   $stadiumId
+     * @param  int                                   $seconds
      * @return array
      */
     protected function crawlWithoutRaceNumber(BaseCrawler $crawler, string $date, int $stadiumId, int $seconds): array
