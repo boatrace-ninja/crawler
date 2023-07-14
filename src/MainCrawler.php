@@ -74,7 +74,7 @@ class MainCrawler
     }
 
     /**
-     * @param  \Boatrace\Ninja\BaseCrawler  $crawler
+     * @param  \Boatrace\Ninja\Crawlers\BaseCrawler  $crawler
      * @param  string                           $date
      * @param  int                              $seconds
      * @return array
@@ -93,7 +93,7 @@ class MainCrawler
     }
 
     /**
-     * @param  \Boatrace\Ninja\BaseCrawler  $crawler
+     * @param  \Boatrace\Ninja\Crawlers\BaseCrawler  $crawler
      * @param  string                           $date
      * @param  int                              $raceNumber
      * @param  int                              $seconds
@@ -111,7 +111,7 @@ class MainCrawler
     }
 
     /**
-     * @param  \Boatrace\Ninja\BaseCrawler  $crawler
+     * @param  \Boatrace\Ninja\Crawlers\BaseCrawler  $crawler
      * @param  string                           $date
      * @param  int                              $stadiumId
      * @param  int                              $seconds
@@ -130,7 +130,7 @@ class MainCrawler
 
     /**
      * @param  string  $name
-     * @return \Boatrace\Ninja\BaseCrawler
+     * @return \Boatrace\Ninja\Crawlers\BaseCrawler
      */
     public function getCrawler(string $name): BaseCrawler
     {
