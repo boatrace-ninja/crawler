@@ -3,7 +3,6 @@
 namespace Boatrace\Ninja;
 
 use Carbon\CarbonImmutable as Carbon;
-use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
@@ -20,15 +19,6 @@ class NoticeCrawler extends BaseCrawler implements CrawlerInterface
      * @var string
      */
     protected $baseXPath = 'descendant-or-self::body/main/div/div/div';
-
-    /**
-     * @param  \Symfony\Component\BrowserKit\HttpBrowser  $httpBrowser
-     * @return void
-     */
-    public function __construct(HttpBrowser $httpBrowser)
-    {
-        parent::__construct($httpBrowser);
-    }
 
     /**
      * @param  array   $response

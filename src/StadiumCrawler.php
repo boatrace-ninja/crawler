@@ -3,22 +3,12 @@
 namespace Boatrace\Ninja;
 
 use Carbon\CarbonImmutable as Carbon;
-use Symfony\Component\BrowserKit\HttpBrowser;
 
 /**
  * @author shimomo
  */
 class StadiumCrawler extends BaseCrawler
 {
-    /**
-     * @param  \Symfony\Component\BrowserKit\HttpBrowser  $httpBrowser
-     * @return void
-     */
-    public function __construct(HttpBrowser $httpBrowser)
-    {
-        parent::__construct($httpBrowser);
-    }
-
     /**
      * @param  string  $date
      * @return array
