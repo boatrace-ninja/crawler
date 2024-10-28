@@ -13,11 +13,6 @@ use DI\ContainerBuilder;
 class Crawler
 {
     /**
-     * @var \Boatrace\Ninja\MainCrawler
-     */
-    protected $crawler;
-
-    /**
      * @var \Boatrace\Ninja\Crawler
      */
     protected static $instance;
@@ -31,10 +26,7 @@ class Crawler
      * @param  \Boatrace\Ninja\MainCrawler  $crawler
      * @return void
      */
-    public function __construct(MainCrawler $crawler)
-    {
-        $this->crawler = $crawler;
-    }
+    public function __construct(protected MainCrawler $crawler){}
 
     /**
      * @param  string  $name
