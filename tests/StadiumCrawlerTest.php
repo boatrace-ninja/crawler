@@ -43,6 +43,17 @@ class StadiumCrawlerTest extends PHPUnitTestCase
     /**
      * @return void
      */
+    public function testCrawl(): void
+    {
+        $this->assertSame(
+            $this->stadiums,
+            $this->crawler->crawl('2017-03-31')
+        );
+    }
+
+    /**
+     * @return void
+     */
     public function testCrawlStadiumId(): void
     {
         $this->assertSame(
