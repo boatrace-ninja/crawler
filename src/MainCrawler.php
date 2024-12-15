@@ -44,9 +44,7 @@ class MainCrawler
      */
     public function __call(string $name, array $arguments): Collection
     {
-        return call_user_func_array([$this, 'crawl'], array_merge([
-            mb_strtolower(str_replace('crawl', '', $name)),
-        ], $arguments));
+        return $this->crawl(mb_strtolower(str_replace('crawl', '', $name)), ...$arguments);
     }
 
     /**

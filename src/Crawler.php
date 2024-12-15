@@ -35,7 +35,7 @@ class Crawler
      */
     public function __call(string $name, array $arguments)
     {
-        return call_user_func_array([$this->crawler, $name], $arguments);
+        return $this->crawler->$name(...$arguments);
     }
 
     /**
@@ -45,7 +45,7 @@ class Crawler
      */
     public static function __callStatic(string $name, array $arguments)
     {
-        return call_user_func_array([self::getInstance(), $name], $arguments);
+        return self::getInstance()->$name(...$arguments);
     }
 
     /**
