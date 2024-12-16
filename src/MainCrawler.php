@@ -56,17 +56,13 @@ class MainCrawler
      */
     public function crawl(string $name, string $date, int $stadiumId = null, int $raceNumber = null): Collection
     {
-        if (is_null($stadiumId)) {
-            $stadiumIds = $this->getStadiumIds($date);
-        } else {
-            $stadiumIds = [$stadiumId];
-        }
+        $stadiumIds = is_null($stadiumId)
+            ? $this->getStadiumIds($date)
+            : [$stadiumId];
 
-        if (is_null($raceNumber)) {
-            $raceNumbers = $this->getRaceNumbers();
-        } else {
-            $raceNumbers = [$raceNumber];
-        }
+        $raceNumbers = is_null($raceNumber)
+            ? $this->getRaceNumbers()
+            : [$raceNumber];
 
         $response = [];
 
